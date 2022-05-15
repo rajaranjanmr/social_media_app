@@ -1,1 +1,1 @@
-iisss a social media app
+itsss a social media app
