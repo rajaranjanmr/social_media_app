@@ -24,16 +24,16 @@ function TabsComponent(){
     return(
           <div className="tabs">
         <NavLink className="tablink  bg-blue-900 hover:bg-blue-400 text-slate-300" style={getActiveStyle} to="/home">
-          <i class="fa-solid fa-solid-t fa-square-rss"></i>
+          <i className="fa-solid fa-solid-t fa-square-rss"></i>
         </NavLink>
         <NavLink className="tablink bg-blue-900 hover:bg-blue-400 text-slate-300" style={getActiveStyle} to="/friend">
-          <i class="fa-solid fa-solid-t fa-user-group"></i>
+          <i className="fa-solid fa-solid-t fa-user-group"></i>
         </NavLink>
         <NavLink className="tablink bg-blue-900 hover:bg-blue-400 text-slate-300" style={getActiveStyle} to="/notification">
-          <i class="fa-solid fa-solid-t fa-bell"></i>
+          <i className="fa-solid fa-solid-t fa-bell"></i>
         </NavLink>
         <NavLink className="tablink bg-blue-900 hover:bg-blue-400 text-slate-300" style={getActiveStyle} to="/bookmark">
-          <i class="fa-solid fa-solid-t fa-bookmark"></i>
+          <i className="fa-solid fa-solid-t fa-bookmark"></i>
         </NavLink>
       </div>
         

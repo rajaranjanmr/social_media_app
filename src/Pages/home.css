@@ -317,7 +317,7 @@ input[class="post-box"]:hover{
     display:flex;
     flex-direction:column;
     width:30%;
-    z-index:-1;
+    /* z-index:-1; */
     position: relative;
     /* justify-content: center; */
         margin:auto;
@@ -340,6 +340,21 @@ img[class="profile-logo-img"]{
     height: 50px;
     border-radius: 50%;
     border-color:green;
+}
+.profile-options{
+    position: absolute; 
+    right: 4px;
+    top: 12px;
+}
+.icons-dots{
+    display: flex; 
+    flex-direction: row;  
+    gap: 10px;
+}
+.icons-dots li{
+    background-color: black;
+    list-style: disc;
+    font-size:18px;
 }
 .profile-name{
     text-align:center;
@@ -384,11 +399,389 @@ img[class="post-image-at-time"]{
     justify-content: space-evenly;
     /* background-color:blue; */
     padding-top:5px;
+    padding:10px;
+    padding-top:15  px;
     gap:10rem;
 }
 
 
 .fa-solid-bottom{
-    color:black;
+    color:violet;
     font-size:23px;
+    
+}
+
+/* post page */
+.post-page-section{
+    display: flex;
+    flex-direction: column;
+    /* gap:1rem; */
+}
+.create-post{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    /* background-color: red; */
+}
+.user-profile{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    gap:1.8rem;
+    border-bottom: 1px solid aliceblue;
+    padding:10px;
+    
+
+}
+img[class="user-logo-post"]{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    left:5px;
+
+}
+.user-name{
+    position: relative;
+    left:0px;
+    /* top:10px; */
+    font-weight: 900;
+    font-size:2rem;
+}
+textarea[class="post-input-field"]{
+    padding:2rem;
+    width:100%;
+    height: 300px;
+
+
+}
+.create-post-text{
+    position: relative;
+    top:5px;
+    font-size: 1.3rem;
+}
+.input-post{
+    margin-top: 1rem;
+}
+.attachments{
+    display: flex;
+    flex-direction: row;
+    /* gap:1rem; */
+    background-color: aliceblue;
+    justify-content: space-around;
+    width: 40%;
+    /* padding:10px; */
+    margin:auto;
+    
+    margin-bottom:23px;
+    border-bottom: 1px solid aliceblue;
+
+
+    /* align-content: left; */
+}
+.fa-solid-posts{
+    /* color:white; */
+    font-size:30px;
+}
+.images-attach{
+    /* width: 100%; */
+    width:25%;
+    /* background-color: red; */
+    text-align: center ;
+    padding:10px;
+}
+.location{
+    width:25%;
+    /* background-color: red; */
+    text-align: center ;
+}
+
+.emojis{
+    width:25%;
+    /* background-color: red; */
+    text-align: center ;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    color:black;
+
+
+}
+.file-attach{
+    width:25%;
+    /* background-color: red; */
+    text-align: center ;
+}
+.post-update{
+    width: 10%;
+    padding:0.5rem;
+    font-size:1.5rem;
+    font-weight: 900;
+    letter-spacing: 1;
+    /* position: relative;
+    right:-30rem; */
+    border-radius:10px;
+    top:5rem;
+}
+input[type="file"]{
+    display:none;
+}
+label[for="avatar"]{
+    color:black;
+    margin:0px;
+    padding: 8px;
+    
+}
+
+.fa-arrow-left-long{
+    position: relative;
+    left:10px;
+    top:-3px;
+    font-weight: 900;
+    padding: 15px;
+    font-size:1.3rem;
+}
+.create-post{
+    position: relative;
+    border-bottom:1px solid aliceblue;
+    /* top:2px; */
+    padding:10px;
+    color:white;
+    padding-bottom:14px;
+
+}
+.button-post{
+ border-top:2px solid aliceblue;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ gap:40rem;
+ padding-top:3.5rem;
+
+}
+.comment-section{
+    /* width: 100%; */
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left:22px;
+}
+.comment-main-section{
+    width: 80%;
+    border: 1px solid black;
+    position: relative;
+    top: 5px;
+    left: -25px;
+    border-radius: 10px;
+    padding: 2px;
+
+     
+}
+.button-comment-section{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left:30px;
+    gap:50%;
+    margin-top:15px;
+}
+.comment-post{
+    padding:5px;
+    padding-left:15px;
+    padding-right: 15px;;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.comment-post:hover{
+    
+}
+button{
+    cursor:hand;
+}
+.filter-section{
+    width:40%;
+    /* background-color: red; */
+    position: relative;
+    left:30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom:20px;
+
+}
+.show-all{
+    padding:5px;
+    border:1px solid green;
+    border-radius:15px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align:center;
+}
+.show-all:hover{
+    border:1px solid yellowgreen;
+}
+
+.items-three-dots{
+    display: flex;
+    flex-direction: column;
+    background-color: hotpink;
+    min-width: 150px;
+    max-height: 100px;
+    padding: 5px;
+    z-index: 999;
+    position: absolute;
+    /* right: 1rem; */
+    top: 2rem;
+    /* background-color: p; */
+}
+.links-to-delete{
+    /* border-bottom:1px solid black; */
+    width:100%;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    z-index:10;
+    
+}
+.links-to-delete:hover{
+    background-color: green;
+}
+.fa-user{
+    cursor: pointer;
+}
+.profile-update{
+    width:30%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left:10%;
+    top:100px;
+    border-right:6px solid black;
+    height: 400px;
+
+}
+.profile-update img{
+    width:200px;
+    height: 200px;
+    border-radius:50%;
+    position: relative;
+    left:28%;
+}
+
+.profile-update button{
+    padding:10px;
+    font-weight: bold;
+    width:30%;
+    position: relative;
+    text-align: center;
+    left:30%;
+    margin-top:30px;
+}
+.profile-details{
+    width:50%;
+    position: relative;
+    left:40%;
+    display: flex;
+    flex-direction: column;
+    top:-280px;
+    color:black;
+    
+}
+.profile-bio{
+    display: flex;
+    flex-direction: row;
+}
+.profile-bio textarea{
+    width:50%;
+    max-height: 50px;
+    position: relative;
+    left:80px;
+    top:30px;
+    border-radius: 15px;
+
+}
+.profile-bio label{
+    position: relative;
+    left:10px;
+    color:black;
+    top:-30px;
+}
+.profile-portfolio{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    top:-20px;
+}
+.profile-portfolio textarea{
+    width:50%;
+    max-height: 50px;
+    position: relative;
+    left:-10px;
+    top:-10px;
+    border-radius: 15px;
+}
+.profile-portfolio label{
+    position: relative;
+    left:10px;
+    color:black;
+    top:-70px;
+}
+.button-section{
+    display: flex;
+    flex-direction: row;
+    gap:15rem;
+    position: relative;
+    left:30%;
+    top:-150px;
+    width: 100%;
+}
+.button-section button{
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 900;
+    border-radius: 15px;
+
+}
+.profile-update button{
+    border-radius:15px;
+    font-weight: 900;
+} .fa-arrow-left-long{
+    cursor:pointer;
+}
+.fa-eye-slash-repeat{
+    position: relative;
+    left: 146px;
+    top: -97px;
+    color: grey;
+    font-weight: 100;
+    cursor: pointer;
+}
+.setting{
+    position: relative;
+    left:10px;
+    top:20px;   
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:2rem;
+    
+}
+.setting button{
+    padding:10px;
+    font-weight: 900;
+    font-size:1.3rem;
+    border-radius: 15px;
+}
+.text-inside{
+    font-size: 0.7rem;
+    padding-left:5px;
+    position: relative;
+    top:-5px;
 }
