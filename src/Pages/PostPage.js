@@ -3,7 +3,7 @@ import logoImg from "../assets/logoM.png";
 import {useNavigate , useLocation} from "react-router-dom";
 import {useEffect, useState}  from "react"
 import { usePostContext } from "../context/postContext";
-import { addPosts, getPostById } from "../utility/apiCall";
+import { addPosts, getAllUsers, getPostById } from "../utility/apiCall";
 
 function PostPage() {
   const location = useLocation()
@@ -16,8 +16,24 @@ function PostPage() {
 const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 console.log(date+time)
+
 return date + " "+ time;  
 }
+const [editPost,setEditPost] = useState({})
+      useEffect(()=>{
+        async function getPost(){
+          const response = await getPostById(postEditId)
+          if(response.success){
+            setEditPost(response.post)
+            console.log(editPost)
+          }
+          else{
+            setEditPost({})
+          }
+
+        }
+        getPost();
+      },[])
   const [postData,setPostData]=useState(
     {
       username:"",
@@ -47,7 +63,7 @@ return date + " "+ time;
       //   attachedFile:""
       //   })
         const response = await addPosts({
-          username:postState.userName,
+          username:postState.username,
           logo:"",
           content:postContent,
           createdAt:getTodaysDate(),
@@ -66,21 +82,8 @@ return date + " "+ time;
         console.log(postState)
         navigate("/home")
       }
-      const [editPost,setEditPost] = useState({})
-      useEffect(()=>{
-        async function getPost(){
-          const response = await getPostById(postEditId)
-          if(response.success){
-            setEditPost(response.post)
-            console.log(editPost)
-          }
-          else{
-            setEditPost({})
-          }
-
-        }
-        getPost();
-      },[])
+      
+      
   return <>
   <div className="post-page-section">
       <div className="create-post h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500">

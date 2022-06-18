@@ -52,7 +52,7 @@ const editPostById = async (post_id,post) =>{
     console.log("posttt",post)
     try{
         const response = await axios.post( `api/posts/edit/${post_id}`,
-        {post},
+        {postData:post},
         {headers}
         );
         console.log(response, "--->post api call")
@@ -116,9 +116,10 @@ const editPost = async (post_id) =>{
     }
 }
 const likePostById = async (post_id) =>{
+    console.log("like--",post_id)
     try{
-        const response = await axios.post(`/api/posts/like/:${post_id}`,
-        {headers})
+        const response = await axios.post(`/api/posts/like/${post_id}`,
+        {headers},{})
         return {posts:response.data.posts, success:true}
     }
     catch(err){
@@ -127,8 +128,9 @@ const likePostById = async (post_id) =>{
     }
 }
 const dislikePostById = async (post_id) =>{
+    
     try{
-        const response = await axios.post(`/api/posts/dislike/:${post_id}`,
+        const response = await axios.post(`/api/posts/dislike/${post_id}`,{},
         {headers})
         return {posts: response.data.posts, success:true}
     }
@@ -204,7 +206,7 @@ const getAllComment = async (post_id)=>{
 }
 const createComment = async (post_id,post_data)=>{
     try{
-    const response = await axios.post(`/api/comments/add/:${post_id}`,
+    const response = await axios.post(`/api/comments/add/${post_id}`,
     {post_data},
     {headers})
     return {comments:response.data.comments,success:true}

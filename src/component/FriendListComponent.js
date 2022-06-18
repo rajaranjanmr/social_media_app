@@ -1,12 +1,13 @@
 import logoImg from "../assets/logoM.png";
 import {useState} from "react"
+import { unfollowUser } from "../utility/apiCall";
 function FriendListComponent(props){
     const [follow,setFollow] = useState("unfollow")
     function followClickHandler(){
         if(follow==="follow"){
         setFollow("unfollow")
         async function followThisUser(){
-                const response = await follow
+                const response = await unfollowUser()
         }
         }
         else if(follow==="unfollow")

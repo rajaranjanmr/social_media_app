@@ -6,7 +6,10 @@ import {users} from "../backend/db/users"
 import { logIn, signUp } from "../utility/apiCall";
 import { useAuth } from "../context/authContext";
 import {useNavigate,useLocation} from "react-router-dom";
+import { usePostContext } from "../context/postContext";
 function HomeMain(){
+  const {postState,postDispatch} = usePostContext();
+
   const [userName,setUserName] = useState("");
   const [email,setEmail] = useState("");
   const [pwd,setPwd] = useState("")
@@ -53,15 +56,18 @@ function HomeMain(){
       const response = await signUp(email,pwd,userName);
       localStorage.setItem("token",response.token);
       setLogIn(true);
+      // postDispatch({type:"SET_USERS", payload:response.users})
+
 
       console.log("response ",response);
       location?.state?.from?.pathname
       ? navigate(location?.state?.from?.pathname)
       : navigate('/home')
-
+      
     
     }
   }
+  console.log("userss",postState)
   return(
         <div className="home-page">
 
@@ -108,3 +114,10 @@ function HomeMain(){
     )
 }
 export {HomeMain}
+
+-ea
+-DNoDynamicAdmin=true
+-Dconsole.log.level="INFO"
+-DconfigOverload="/Users/raranjan/IdeaProjects/09062022/topics-definition-api-tests/src/test/resources/topicsdefinition-app-config-override.yaml"
+-DretryFailedTests=false
+-Denvironment=test

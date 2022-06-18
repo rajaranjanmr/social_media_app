@@ -7,7 +7,7 @@ import "../Pages/home.css";
 import { bookmarkPostHandler } from "../backend/controllers/UserController";
 import { HeaderComponent } from "../component/HeaderComponent";
 import { TabsComponent } from "../component/TabsComponent";
-import { getAllPosts } from "../utility/apiCall";
+import { getAllPosts, getAllUsers } from "../utility/apiCall";
 import { usePostContext } from "../context/postContext";
 import { CommentComponent } from "../component/CommentComponent";
 function Home() {
@@ -41,6 +41,15 @@ function Home() {
         }
         getAllPostss();
     },[])
+    // useEffect(()=>{
+    //   async function getAllUsersAvailable(){
+    //     const response = await getAllUsers()
+    //     postDispatch({type:"SET_USERS", payload:response.users})
+
+    //   }
+    //   getAllUsersAvailable()
+    // },[])
+    console.log("useres currently in db",postState)
   return (
     <div className="home-page ">
         <div className="non-post">

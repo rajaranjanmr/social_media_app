@@ -124,6 +124,7 @@ export const editPostHandler = function (schema, request) {
     }
     const postId = request.params.postId;
     const { postData } = JSON.parse(request.requestBody);
+  
     let post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.username !== user.username) {
       return new Response(
@@ -135,6 +136,7 @@ export const editPostHandler = function (schema, request) {
       );
     }
     post = { ...post, ...postData };
+    console.log(post,"deeper backend")
     this.db.posts.update({ _id: postId }, post);
     return new Response(201, {}, { posts: this.db.posts });
   } catch (error) {
@@ -168,7 +170,9 @@ export const likePostHandler = function (schema, request) {
       );
     }
     const postId = request.params.postId;
+    
     const post = schema.posts.findBy({ _id: postId }).attrs;
+    console.log(post,"inside backend")
     if (post.likes.likedBy.some((currUser) => currUser._id === user._id)) {
       return new Response(
         400,
