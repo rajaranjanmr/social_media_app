@@ -114,10 +114,3 @@ function HomeMain(){
     )
 }
 export {HomeMain}
-
--ea
--DNoDynamicAdmin=true
--Dconsole.log.level="INFO"
--DconfigOverload="/Users/raranjan/IdeaProjects/09062022/topics-definition-api-tests/src/test/resources/topicsdefinition-app-config-override.yaml"
--DretryFailedTests=false
--Denvironment=test
